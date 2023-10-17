@@ -1,0 +1,9 @@
+.listings {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spacer {
+    margin:115px;
+}

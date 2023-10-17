@@ -1,0 +1,27 @@
+.NavBar {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(34, 34, 112);
+    border-radius: 5px;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+
+  }
+
+.links {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+h1 {
+    color: goldenrod;
+
+}
+
+a {
+        text-decoration: none;
+        color: goldenrod;
+    }
