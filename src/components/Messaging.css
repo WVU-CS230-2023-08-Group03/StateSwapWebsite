@@ -1,0 +1,7 @@
+.Messaging {
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+    background-color: black;
+    overflow-y: auto;
+}

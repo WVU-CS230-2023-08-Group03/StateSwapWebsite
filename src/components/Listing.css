@@ -4,11 +4,11 @@
     height: 250px;
     overflow: hidden;
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
     padding:5px;
     margin:5px;
     
-    background-color: lightgray;
+    background-color: black;
 
 }
 
@@ -19,7 +19,7 @@
 }
 
 .title {
-    color: black;
+    color: white;
     font-weight: bold;
     text-align: center;
     margin: 0;
@@ -27,7 +27,7 @@
 }
 
 .description {
-    color: darkslategrey;
+    color: white;
     font-weight: lighter;
     text-align: left;
     margin: 0;

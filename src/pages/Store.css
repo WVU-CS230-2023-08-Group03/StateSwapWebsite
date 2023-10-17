@@ -2,8 +2,9 @@
 
     display: flex;
     flex-wrap: wrap;
+    flex: 1;
 }
 
 .spacer {
-    margin:115px;
+    margin:30px;
 }

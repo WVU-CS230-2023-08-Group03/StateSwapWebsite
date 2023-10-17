@@ -2,7 +2,7 @@
     margin: 0;
     padding: 5px;
     text-align: center;
-    background-color: rgb(34, 34, 112);
+    background-color: black;
     border-radius: 5px;
     position: fixed; 
     top: 0; 
@@ -17,11 +17,11 @@
 }
 
 h1 {
-    color: goldenrod;
+    color: white;
 
 }
 
 a {
         text-decoration: none;
-        color: goldenrod;
+        color: white;
     }
