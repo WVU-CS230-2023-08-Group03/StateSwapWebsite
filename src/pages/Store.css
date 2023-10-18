@@ -1,10 +1,22 @@
 .listings {
-
+    left: 25%;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
+    overflow-y: auto;
 }
 
 .spacer {
-    margin:30px;
+    
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.store {
+    display:flex;
+    flex: 1;
 }
