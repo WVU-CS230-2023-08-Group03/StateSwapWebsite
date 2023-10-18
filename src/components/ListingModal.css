@@ -1,0 +1,22 @@
+.modal{
+    padding: 10px;
+    position:fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    Background: black;
+    border-radius: 10px;
+    
+}
+
+.modal > button{
+    position:absolute;
+    right:0;
+    bottom:0;
+
+}
+
+.modal > p{
+    color: white;    
+}

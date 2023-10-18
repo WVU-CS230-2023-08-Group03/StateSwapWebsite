@@ -12,51 +12,15 @@ function Store() {
     
     <div>
         <NavBar />
+        <p class="spacer"></p>
         <Messaging />
         <div class="spacer"></div>
         <div class="listings">
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-            <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
-
+            {Array(25).fill(null).map(() => (
+                <Listing image={HondaCivic} title="Honda Civic" description="2012 honda civic 150000 miles good condition leather interior heated seats lorem ipsum dolor el sedat in nominum lorem ipsum dolor el sedatg in nominum lorem ipsum"></Listing>
+            ))}
         </div>
+        
     </div>)
 }
 

@@ -3,12 +3,12 @@
     min-width: 200px;
     height: 250px;
     overflow: hidden;
-    border: 2px solid black;
+    border: 1px solid lightgray;
     border-radius: 2px;
     padding:5px;
     margin:5px;
     
-    background-color: black;
+    background-color: whitesmoke;
 
 }
 
@@ -19,7 +19,7 @@
 }
 
 .title {
-    color: white;
+    color: darkslategrey;
     font-weight: bold;
     text-align: center;
     margin: 0;
@@ -27,7 +27,7 @@
 }
 
 .description {
-    color: white;
+    color: darkslategray;
     font-weight: lighter;
     text-align: left;
     margin: 0;

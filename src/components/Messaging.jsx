@@ -1,10 +1,11 @@
 import './Messaging.css'
 
 const Messaging = (props)=>{
+
+    console.log("messaging initialised")
     return (
-        
         <div class = "Messaging">
-            <body>test</body>
+            <p>{props.messages}</p>
         </div>
     )
 }
