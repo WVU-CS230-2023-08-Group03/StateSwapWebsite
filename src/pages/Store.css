@@ -1,14 +1,11 @@
 .listings {
-    left: 25%;
+    /* left: 25%; */
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     overflow-y: auto;
 }
 
-.spacer {
-    
-}
 
 .content {
     flex: 1;

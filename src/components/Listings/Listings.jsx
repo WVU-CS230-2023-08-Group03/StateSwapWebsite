@@ -1,12 +1,10 @@
 import './Listings.css'
-import Listing from './Listing.jsx'
+import Listing from '../Listing/Listing.jsx'
 
 //assets
-import HondaCivic from '../assets/HondaCivic.jpg';
+import HondaCivic from '../../assets/HondaCivic.jpg';
 
 const Listings = (props)=>{
-
-    
     return (
         <div class="Listings">
                 {Array(25).fill(null).map(() => (

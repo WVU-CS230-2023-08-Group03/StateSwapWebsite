@@ -1,7 +1,7 @@
 import './Listing.css';
 import React from 'react';
 import { useState } from 'react';
-import ListingModal from './ListingModal.jsx';
+import ListingModal from '../ListingModal/ListingModal.jsx';
 
 const Listing = (props)=>{
     const [isModalOpen, setIsModalOpen] = useState(false);
