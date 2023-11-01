@@ -11,9 +11,7 @@ import Layout from "../components/Layout/Layout.jsx"
 
 function Store() {
     return (
-        <Layout>
-            <Listings />
-        </Layout>
+            <Listings/>
     )
 }
 
