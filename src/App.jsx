@@ -6,6 +6,8 @@ import Layout from "./components/Layout/Layout.jsx"
 
 import './App.css'
 
+import { Link } from "react-router-dom";
+
 
 //Basically, this just checks what the current URL is and decides whether to render the Store page, the profile page, or etc
 function App() {
