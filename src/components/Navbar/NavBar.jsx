@@ -1,30 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import styles from './NavBar.module.css';
+import {Link} from "react-router-dom";
+import { useState } from 'react';
 
-const Navbar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'black' }}>
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/" style={{ color: 'white', textAlign: 'center', width: '100%' }}>
-          <h1>Mountain State Swap</h1>
-        </Link>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto" style={{ display: 'flex', alignItems: 'center' }}>
-            <li className="nav-item">
-              <Link to="/pages/profile" className="nav-link" style={{ color: 'white', marginLeft: '100px', marginRight: '200px', border: 'none', textDecoration: 'none' }}>
-                Profile
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/pages/profile" className="nav-link" style={{ color: 'white', marginLeft: '200px', marginRight: '200px', border: 'none', textDecoration: 'none' }}>
-                Profile
-              </Link>
-            </li>
-          </ul>
+
+//onClick= {() => setPage("Profile")}
+const NavBar = () => {
+    //const [currentPage, setPage] = useState("Store");
+    return (
+        <div className={styles.NavBar}>
+            <h1>Mountain State Swap</h1>
+            <div className={styles.links}>
+                <a href="./Profile"> Profile </a>
+                <a href="./Store">Store</a>
+                <a href="./Search">Search</a>
+                <a href="./Help">Help</a>
+            </div>
         </div>
-      </div>
-    </nav>
-  );
-};
+    )
+}
 
-export default Navbar;
+
+export default NavBar;
