@@ -1,23 +1,26 @@
+// Navbar Component
 import styles from './NavBar.module.css';
-import {Link} from "react-router-dom";
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 
-
-//onClick= {() => setPage("Profile")}
-const NavBar = () => {
-    //const [currentPage, setPage] = useState("Store");
-    return (
-        <div className={styles.NavBar}>
-            <h1>Mountain State Swap</h1>
-            <div className={styles.links}>
-                <a href="./Profile"> Profile </a>
-                <a href="./Store">Store</a>
-                <a href="./Search">Search</a>
-                <a href="./Help">Help</a>
-            </div>
+const Navbar = () => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'black', padding: '0' }}>
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/" style={{ color: 'white', textAlign: 'center', width: '100%' }}>
+          <h1 style={{ color: 'white' }}>Mountain State Swap</h1>
+        </Link>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto" style={{ display: 'flex', alignItems: 'center', listStyle: 'none' }}>
+            <li className="nav-item">
+              <Link to="/profile" className="nav-link" style={{ color: 'white', textDecoration: 'none' }}>
+                Profile
+              </Link>
+            </li>
+          </ul>
         </div>
-    )
-}
+      </div>
+    </nav>
+  );
+};
 
-
-export default NavBar;
+export default Navbar;
