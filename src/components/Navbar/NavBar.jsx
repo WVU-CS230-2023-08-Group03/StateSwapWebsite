@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'black', padding: '0' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'black', padding: '0', borderBottom: '1px solid black' }}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/" style={{ color: 'white', textAlign: 'center', width: '100%' }}>
-          <h1 style={{ color: 'white' }}>Mountain State Swap</h1>
-        </Link>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <h1 style={{ color: 'white', textAlign: 'center', width: '100%', margin: '0' }}>Mountain State Swap</h1>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto" style={{ display: 'flex', alignItems: 'center', listStyle: 'none' }}>
             <li className="nav-item">
-              <Link to="/profile" className="nav-link" style={{ color: 'white', textDecoration: 'none' }}>
+              <Link to="/profile" className="nav-link" style={{ color: 'white', textDecoration: 'none', textAlign: 'center' }}>
                 Profile
               </Link>
             </li>
