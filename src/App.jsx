@@ -13,6 +13,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/profile" element={<Profile />} />
+          //profile
+          //Store
+          //search
+          //help
+          //create listing
         </Routes>
       </BrowserRouter>
     </div>
