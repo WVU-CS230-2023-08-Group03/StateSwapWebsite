@@ -1,0 +1,74 @@
+
+
+body {
+    padding: 1000px;
+    background-color: white;
+}
+
+#image_section {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    padding: 20px;
+}
+
+#first_rectangle {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 50%;
+    background-color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#second_rectangle {
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #222222;
+    color: black;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+#description_field {
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: transparent;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#location_dropdown {
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: transparent;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#upload_button {
+    position: absolute;
+    top: 750px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
