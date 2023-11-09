@@ -1,8 +1,7 @@
-// Navbar Component
-import styles from './NavBar.module.css';
+import React from 'react';
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ onProfileClick }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'black', padding: '0', borderBottom: '1px solid black' }}>
       <div className="container-fluid">
@@ -10,7 +9,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto" style={{ display: 'flex', alignItems: 'center', listStyle: 'none' }}>
             <li className="nav-item">
-              <Link to="/profile" className="nav-link" style={{ color: 'white', textDecoration: 'none', textAlign: 'center' }}>
+              <Link to="/profile" className="nav-link" style={{ color: 'white', textDecoration: 'none', textAlign: 'center' }} onClick={onProfileClick}>
                 Profile
               </Link>
             </li>
