@@ -45,7 +45,7 @@ const CreateListing = () => {
             <div class="data-fields">
 
                 <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '70px' }}>
-                    <input type="text" placeholder="Enter " style={fieldStyle} />
+                    <input type="text" placeholder="Enter Description" style={fieldStyle} />
                     <input type="text" placeholder="Enter Suburb" style={fieldStyle} />
                     <button className="btn btn-outline-success" type="submit" style={{ marginLeft: '5px' }}>Create Posting</button>
                 </form>
