@@ -6,7 +6,7 @@ import Layout from './components/Layout/Layout.jsx';
 import './App.css';
 import Navbar from './components/Navbar/NavBar.jsx';
 import Messaging from './components/Messaging/Messaging.jsx';
-import createListing from "./components/Listing/createListing.jsx";
+import CreateListing from "./components/Listing/createListing.jsx";
 
 function App() {
   return (
@@ -16,13 +16,11 @@ function App() {
         <Routes>
           <Route path="/profile" element={<Profile />} />
           <Route path = "/store" element = {<Store />} />
-
-          <Route path = "/createListing" element = {<createListing/>} /> 
-          //profile
-          //Store
+          <Route path = "/createListing" element = {<CreateListing/>} /> 
+    
           //search
           //help
-          //create listing
+  
         </Routes>
       </BrowserRouter>
     </div>
