@@ -1,7 +1,9 @@
-import NavBar from "../Navbar/NavBar"
-import Messaging from "../Messaging/Messaging.jsx"
-
+// Layout Component
+import NavBar from "../Navbar/NavBar";
+import Messaging from "../Messaging/Messaging.jsx";
 import SampleMessages from '../../assets/SampleMessages.txt';
+import Profile from '../../pages/profile/Profile.jsx';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Layout = (props) => {
     return (
@@ -9,10 +11,22 @@ const Layout = (props) => {
             width: "100vw",
             height: "100vh",
             overflowY: "hidden",
+            backgroundColor: 'black',
+            color: 'white'
         }}>
             <div style={{
                 height: "15vh"
             }}>
+
+                <div className="App">
+                    <BrowserRouter>
+                        <NavBar />
+                        <Routes>
+                            <Route path="/profile" element={<Profile />} />
+                        </Routes>
+                    </BrowserRouter>
+                </div>
+
             </div>
             <div style={{
                 height: "85vh",
@@ -26,4 +40,4 @@ const Layout = (props) => {
     )
 }
 
-export default Layout
+export default Layout;

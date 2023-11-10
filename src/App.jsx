@@ -12,8 +12,12 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Layout><Profile /></Layout>} />
-          <Route path="/store" element={<Layout><Store /></Layout>} />
+          <Route path="/profile" element={<Profile />} />
+          //profile
+          //Store
+          //search
+          //help
+          //create listing
         </Routes>
       </BrowserRouter>
     </div>
