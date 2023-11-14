@@ -37,11 +37,7 @@ const CreateListing = () => {
                 onChange={handleImageChange}
                 style={{ display: 'none' }}
             />
-
-            <div class="file-label-container">
-                <div class="line"></div>
-            </div>
-
+            
             <div class="data-fields">
 
                 <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '70px' }}>
