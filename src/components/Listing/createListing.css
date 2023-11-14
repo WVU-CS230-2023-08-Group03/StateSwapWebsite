@@ -1,0 +1,57 @@
+.create-listing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    padding-top: 150px;
+    padding: 20px;
+  }
+  
+  .image-container {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+  }
+  
+  .image-preview {
+    max-width: 50%;
+    max-height: 50%;
+    scale: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .file-label-container {
+    position: absolute;
+    top: 400px; /* Adjusted to move it down by 400px */
+    transform: translate(0%, -50%);
+   
+    align-self: center; 
+  }
+  
+  .file-label {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #050;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+  
+    position: absolute;
+    top: 410px; /* Adjusted to move it down by 400px */
+    
+  }
+  
+  .line {
+    border-bottom: 2px solid black;
+    width: 500px;
+  }
+
+  .data-fields{
+    position: absolute; 
+    top: 500px; 
+  }
+  

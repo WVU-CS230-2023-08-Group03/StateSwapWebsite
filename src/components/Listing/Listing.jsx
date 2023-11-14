@@ -5,6 +5,7 @@ import ListingModal from '../ListingModal/ListingModal.jsx';
 
 const Listing = (props)=>{
     const [isModalOpen, setIsModalOpen] = useState(false);
+    //const 
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -14,11 +15,16 @@ const Listing = (props)=>{
         setIsModalOpen(false);
     }
 
+    
+
+    
+
     return (
         
         <div class = "Listing">
             <img src = {props.image} class = "image"></img>
             <button onClick={openModal}>View Details</button>
+            <button onClick={openModal}>Report</button>
             <p class = "title">{props.title}</p>
             <p class = "description">{props.description}</p>
             {isModalOpen && (
