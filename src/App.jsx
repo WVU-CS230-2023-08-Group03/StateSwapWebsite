@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 
 //Basically, this just checks what the current URL is and decides whether to render the Store page, the profile page, or etc
 function App() {
-    var whereAmI = window.location.pathname;
+    var whereAmI = window.location.pathname.split("/")[1];
 
     //we can add extra else-ifs to this bad boy when we implement more pages.
-    if(whereAmI === "/Profile"){
+    if(whereAmI === "Profile"){
       return (<div>
         <Layout>
           <Profile></Profile>
