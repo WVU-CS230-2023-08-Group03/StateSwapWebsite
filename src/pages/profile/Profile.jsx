@@ -1,4 +1,4 @@
-import "./profile.css";
+import "./Profile.css";
 import Card from 'react-bootstrap/Card';
 import Listings from "../../components/Listings/Listings.jsx"
 import test_img from './test_img.jpg';
