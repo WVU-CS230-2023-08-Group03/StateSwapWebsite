@@ -3,6 +3,7 @@ import Listing from "../components/Listing/Listing.jsx"
 import Messaging from "../components/Messaging/Messaging.jsx"
 import Listings from "../components/Listings/Listings.jsx"
 import './Store.css'
+import ListingWindow from "../components/Listing2/listingWindow.jsx"
 
 
 //assets
@@ -12,7 +13,7 @@ import Layout from "../components/Layout/Layout.jsx"
 
 function Store() {
     return (
-            <Listings/>
+            <ListingWindow/>
     )
 }
 
