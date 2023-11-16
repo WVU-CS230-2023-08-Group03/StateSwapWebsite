@@ -4,8 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import { Button } from '@mui/material'
+import { Button, ButtonGroup } from '@mui/material'
 import { CardActionArea } from '@mui/material';
+import Report from '../Report/Report.jsx';
+
 
 import ListingPopup from './listingPopup';
 
@@ -15,6 +17,8 @@ function listing2({ width, img, title, content }) {
 
     const [messageInitiated, setMessageInitiated] = useState(false);
     const [tradeInitiated, setTradeInitiated] = useState(false);
+    const [reportInitiated, setReportInitiated] = useState(false);
+
 
 
 
@@ -59,7 +63,7 @@ function listing2({ width, img, title, content }) {
                 <CardActions>
                     <Button
                         variant="contained"
-                        sx={{ width: '50%' }}
+                        sx={{ width: '33%' }}
                         onClick={() => {
                             console.log('clicked message');
                             setMessageInitiated(true);
@@ -69,12 +73,22 @@ function listing2({ width, img, title, content }) {
 
                     <Button
                         variant="contained"
-                        sx={{ width: '50%' }}
+                        sx={{ width: '33%' }}
                         onClick={() => {
                             console.log('clicked trade');
                             setTradeInitiated(true);
                         }}>
                         Trade
+                    </Button>
+                    <Button
+                        variant="contained"
+                        sx={{ width: '33%' }}
+                        onClick={() => {
+                            openReport;
+                            console.log('clicked report');
+                            setReportInitiated(true);
+                        }}>
+                        Report
                     </Button>
                 </CardActions>
             </Card>
