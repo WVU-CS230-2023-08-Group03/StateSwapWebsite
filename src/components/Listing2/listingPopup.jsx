@@ -18,8 +18,8 @@ function listingPopup({ img, title, content, setMessageInitiated, setTradeInitia
 
     return (
         <Card sx={{
-            position: 'absolute',
-            top: '20%',
+            position: 'fixed',
+            top: '10%',
             left: '25%',
             width: '50%',
             zIndex: '999',
