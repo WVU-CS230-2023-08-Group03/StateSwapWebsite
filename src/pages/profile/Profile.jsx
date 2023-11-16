@@ -26,7 +26,8 @@ function Profile(){
                      ({username}'s bio goes here).
                     </Card.Text>
                     <button className="report">Report</button>
-                    <button className="edit_or_message">Edit Profile</button>
+                    <button className="edit_or_message">Edit Profile
+                    </button>
                 </Card.Body>
             </Card> 
 
