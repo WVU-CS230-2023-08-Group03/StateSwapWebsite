@@ -48,24 +48,19 @@ function EditProfile() {
 	return (
 		<div>
 		<div class="container bootstrap snippets bootdey">
-        <h1 class="text-primary">Edit Profile</h1>
+        <h1 class="text">Edit Profile</h1>
         <hr/>
 	    <div class="row">
       
       <div class="col-md-3">
         <div class="text-center">
-        <div className="image-container">
-                {imagePreview && <img src={imagePreview} alt="Preview" className="image-preview" />}
+            <div className="image-container">
+              {imagePreview && <img src={imagePreview} alt="Preview" className="img-fluid rounded-circle image-preview" />}
             </div>
-            <label htmlFor="fileInput" className="file-label">
-                Choose File
-            </label>
-          <h6>Upload photo</h6>
-          
-          <input type="file" class="form-control"  onChange={handleFileChange}  ref={fileInputRef}/>
-        </div>
-      </div>
-      
+        <h6>Choose profile photo</h6>
+      <input type="file" class="form-control" onChange={handleFileChange} ref={fileInputRef} />
+    </div>
+  </div>
       
       <div class="col-md-9 personal-info">
         <div class="alert alert-info alert-dismissable">
@@ -75,9 +70,11 @@ function EditProfile() {
         </div>
         
 
-        <h3>Personal info</h3>
         
         <form class="form-horizontal" role="form">
+        <div class="text-center">
+          <h3>Personal info</h3>
+       </div>
           <div class="form-group" style={formGroupStyle}>
             <label class="col-lg-3 control-label" style={labelStyle}>First name:</label>
             <div class="col-lg-8">
