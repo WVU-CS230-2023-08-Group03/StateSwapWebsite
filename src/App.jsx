@@ -15,11 +15,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path = "/Store" element = {<Store />} />
+          <Route path = "/Store" element = {<Store />} exact/>
           <Route path = "/createListing" element = {<CreateListing/>} /> 
           <Route path="/profile" element={<Profile />} />
           <Route path="/EditProfile" element={<EditProfile />} />
-    
+          <Route path = "/" element = {<Store />} exact/>
           //search
           //help
   

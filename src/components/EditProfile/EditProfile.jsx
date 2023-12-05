@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EditProfile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { firestore, auth } from 'firebase/app';
 
 
 function EditProfile() {
@@ -33,15 +34,38 @@ function EditProfile() {
           reader.readAsDataURL(file);
       }
   };
-  const handleSaveChanges = () => {
-    // Add logic to save changes (e.g., API call, state update)
-    // For demonstration purposes, we'll just log the changes to the console
-    console.log("Saving changes:", { firstName, lastName, email });
-    alert('Changes saved!');
+
+
+  const handleSaveChanges =  async() => {
+    try {
+      // Get the currently authenticated user
+      const user = auth.currentUser;
+
+      // Update the user profile in Firebase Authentication
+      await user.updateProfile({
+        displayName: `${firstName} ${lastName}`,
+      });
+
+      // Update the user data in Firestore (adjust the collection and document path accordingly)
+      await firestore.collection('users').doc(user.uid).set({
+        firstName,
+        lastName,
+        email,
+        // Add other fields as needed
+      });
+
+      console.log('Changes saved!');
+      alert('Changes saved!');
+    } catch (error) {
+      console.error('Error saving changes:', error.message);
+      alert('Error saving changes. Please try again.');
+    }
   };
+
+
   const handleBackToProfile = () => {
     // Add logic to navigate back to the profile page
-    navigate.push('/profile'); // Assuming the route to the profile page is '/profile'
+    navigate('/profile'); // Assuming the route to the profile page is '/profile'
   };
 
     
@@ -51,7 +75,6 @@ function EditProfile() {
         <h1 class="text">Edit Profile</h1>
         <hr/>
 	    <div class="row">
-      
       <div class="col-md-3">
         <div class="text-center">
             <div className="image-container">

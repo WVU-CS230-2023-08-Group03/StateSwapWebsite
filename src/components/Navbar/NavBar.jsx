@@ -19,20 +19,19 @@ function NavBar() {
             <li className="nav-item">
               <Link to="/createListing" className="nav-link" activeClassName="active">Create Listing</Link>
             </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" activeClassName="active">
-                Profile
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><Link to="/profile" className="dropdown-item" href="#">Profile</Link></li>
-                <li><Link to="/EditProfile" className="dropdown-item" href="#">Settings</Link></li>
-              </ul>
+            <li className="nav-item">
+              <Link to="/profile" className="nav-link" activeClassName="active">Profile</Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          <form className="d-flex ms-auto" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/login" className="nav-link" activeClassName="active">Login/Sign up</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
