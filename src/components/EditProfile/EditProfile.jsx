@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EditProfile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { firestore, auth } from 'firebase/app';
+// import { firestore, auth } from 'firebase/app';
 
 
 function EditProfile() {
