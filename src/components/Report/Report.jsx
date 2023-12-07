@@ -1,5 +1,6 @@
 import React from 'react';
 import './Report.css';
+import '../../firebase';
 
 const Report = (props) => {
     console.log("report created");

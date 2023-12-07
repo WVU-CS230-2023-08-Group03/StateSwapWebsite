@@ -1,4 +1,43 @@
-.profilePic{
+
+.card{
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+   
+  background-color: #fff;
+}
+
+
+
+.stats{
+
+      background: #f2f5f8 !important;
+
+    color: #000 !important;
+}
+.articles{
+  font-size:10px;
+  color: #a1aab9;
+}
+.number1{
+  font-weight:500;
+}
+.followers{
+    font-size:10px;
+  color: #a1aab9;
+
+}
+.number2{
+  font-weight:500;
+}
+.rating{
+    font-size:10px;
+  color: #a1aab9;
+}
+.number3{
+  font-weight:500;
+}
+/* .profilePic{
     width:256px;
     height:256px;
     justify-content: center;
@@ -15,3 +54,11 @@
     margin-left:auto;
     margin-right:0px;
 }
+/* Add the following styles to align the buttons */
+/*.report {
+    margin-right: 10px; /* Adjust the margin as needed 
+}
+
+.edit_or_message {
+    margin-left: 10px; /* Adjust the margin as needed 
+} */
