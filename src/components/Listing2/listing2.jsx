@@ -55,29 +55,7 @@ function Listing2({ width, img, title, content }) {
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                    <Button
-                        variant="contained"
-                        sx={{ width: '33%' }}
-                        onClick={() => setMessageInitiated(true)}
-                    >
-                        Message
-                    </Button>
-                    <Button
-                        variant="contained"
-                        sx={{ width: '33%' }}
-                        onClick={() => setTradeInitiated(true)}
-                    >
-                        Trade
-                    </Button>
-                    <Button
-                        variant="contained"
-                        sx={{ width: '33%' }}
-                        onClick={openReport}
-                    >
-                        Report
-                    </Button>
-                </CardActions>
+                
             </Card>
 
             <ListingPopup

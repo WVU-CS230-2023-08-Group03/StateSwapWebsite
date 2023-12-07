@@ -7,9 +7,11 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material'
 import { CardActionArea } from '@mui/material';
 import listing2 from './listing2';
+import Report from '../Report/Report.jsx';
 
 function listingPopup({ img, title, content, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
 
+    const [reportInitiated, setReportInitiated] = useState(false);
 
     if (!isExpanded) {
         return null;
@@ -46,26 +48,36 @@ function listingPopup({ img, title, content, setMessageInitiated, setTradeInitia
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button
-                    variant="contained"
-                    sx={{ width: '50%' }}
-                    onClick={() => {
-                        console.log('clicked message');
-                        setMessageInitiated(true);
-                    }}>
-                    Message
-                </Button>
+                    <Button
+                        variant="contained"
+                        sx={{ width: '33%' }}
+                        onClick={() => {
+                            console.log('clicked message');
+                            setMessageInitiated(true);
+                        }}>
+                        Message
+                    </Button>
 
-                <Button
-                    variant="contained"
-                    sx={{ width: '50%' }}
-                    onClick={() => {
-                        console.log('clicked trade');
-                        setTradeInitiated(true);
-                    }}>
-                    Trade
-                </Button>
-            </CardActions>
+                    <Button
+                        variant="contained"
+                        sx={{ width: '33%' }}
+                        onClick={() => {
+                            console.log('clicked trade');
+                            setTradeInitiated(true);
+                        }}>
+                        Trade
+                    </Button>
+                    <Button
+                        variant="contained"
+                        sx={{ width: '33%' }}
+                        onClick={() => {
+                            openReport;
+                            console.log('clicked report');
+                            setReportInitiated(true);
+                        }}>
+                        Report
+                    </Button>
+                </CardActions>
         </Card>
 
     );
