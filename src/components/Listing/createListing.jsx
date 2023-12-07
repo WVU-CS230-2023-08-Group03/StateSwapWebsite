@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './createListing.css';
+import '../../firebase';
 
 const CreateListing = () => {
     const [imagePreview, setImagePreview] = useState(null);
