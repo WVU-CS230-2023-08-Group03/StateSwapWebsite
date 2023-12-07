@@ -60,37 +60,7 @@ function listing2({ width, img, title, content }) {
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                    <Button
-                        variant="contained"
-                        sx={{ width: '33%' }}
-                        onClick={() => {
-                            console.log('clicked message');
-                            setMessageInitiated(true);
-                        }}>
-                        Message
-                    </Button>
-
-                    <Button
-                        variant="contained"
-                        sx={{ width: '33%' }}
-                        onClick={() => {
-                            console.log('clicked trade');
-                            setTradeInitiated(true);
-                        }}>
-                        Trade
-                    </Button>
-                    <Button
-                        variant="contained"
-                        sx={{ width: '33%' }}
-                        onClick={() => {
-                            openReport;
-                            console.log('clicked report');
-                            setReportInitiated(true);
-                        }}>
-                        Report
-                    </Button>
-                </CardActions>
+                
             </Card>
 
             <ListingPopup
