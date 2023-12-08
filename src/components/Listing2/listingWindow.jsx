@@ -36,21 +36,6 @@ function listingWindow() {
                     <Listing2 img={listing.image} title={listing.title} content={listing.content}></Listing2>
                 </Grid>
             ))}
-            {listings.map((listing) => (
-                <Grid item xs={12} sm={4} md={3} lg={2}>
-                    <Listing2 img={listing.image} title={listing.title} content={listing.content}></Listing2>
-                </Grid>
-            ))}
-            {listings.map((listing) => (
-                <Grid item xs={12} sm={4} md={3} lg={2}>
-                    <Listing2 img={listing.image} title={listing.title} content={listing.content}></Listing2>
-                </Grid>
-            ))}
-            {listings.map((listing) => (
-                <Grid item xs={12} sm={4} md={3} lg={2}>
-                    <Listing2 img={listing.image} title={listing.title} content={listing.content}></Listing2>
-                </Grid>
-            ))}
         </Grid>
     
 
