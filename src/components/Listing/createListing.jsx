@@ -9,7 +9,7 @@ import { firestore } from '../../firebase.js';
 const CreateListing = () => {
     const [imagePreview, setImagePreview] = useState(null);
     const [title, setTitle] = useState('');
-    const [content, setContent] = useState(''); // New state for content
+    const [content, setContent] = useState('');
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
@@ -30,19 +30,25 @@ const CreateListing = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Check if any of the fields are empty
+        if (!imagePreview || !title || !content) {
+            console.log('Please fill in all fields');
+            return; // Prevent form submission if any field is empty
+        }
+
         try {
             const listingsCollection = collection(firestore, 'listings');
 
-            // Add a document to the 'listings' collection with image, title, and content data (without description)
+            // Add a document to the 'listings' collection with image, title, and content data
             await addDoc(listingsCollection, {
-                image: imagePreview, // Assuming imagePreview holds the image data (URL or base64)
+                image: imagePreview,
                 title: title,
-                content: content // Include the content data here
+                content: content
             });
 
-            // Reset form fields after submission
+            // Reset form fields after successful submission
             setTitle('');
-            setContent(''); // Reset content field
+            setContent('');
             setImagePreview(null);
 
             console.log('Listing created successfully!');
@@ -53,7 +59,6 @@ const CreateListing = () => {
 
     return (
         <div className="create-listing">
-
             <h1>Image preview</h1>
             <div className="image-container">
                 {imagePreview && <img src={imagePreview} alt="Preview" className="image-preview" />}
@@ -68,9 +73,7 @@ const CreateListing = () => {
                 onChange={handleImageChange}
                 style={{ display: 'none' }}
             />
-            
             <div className="data-fields">
-
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '70px' }}>
                     <input 
                         type="text" 
@@ -79,8 +82,7 @@ const CreateListing = () => {
                         value={title} 
                         onChange={(e) => setTitle(e.target.value)} 
                     />
-                    {/* Remove the description input field */}
-                    <textarea // Change the input to textarea for content
+                    <textarea 
                         placeholder="Enter Content here..." 
                         style={fieldStyle} 
                         value={content} 
