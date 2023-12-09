@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { firestore, getDocs, collection, onAuthStateChanged, auth } from '../firebase';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { doc, setDoc, getDoc, getDocs, getFirestore, onSnapshot, addDoc, orderBy, query, serverTimestamp, Timestamp, collection } from 'firebase/firestore';
+import { auth, firestore } from '../firebase.js';
 
 const Messages = () => {
   const [show, setShow] = useState(false);

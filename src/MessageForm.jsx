@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { firestore, addDoc ,getDocs, collection, onAuthStateChanged, auth } from './firebase'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { doc, setDoc, getDoc, getDocs, getFirestore, onSnapshot, addDoc, orderBy, query, serverTimestamp, Timestamp, collection } from 'firebase/firestore';
+import { auth, firestore } from './firebase.js';
 
 function MessageForm() {
    
