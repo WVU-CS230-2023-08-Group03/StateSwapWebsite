@@ -1,33 +1,30 @@
-
-import './App.css'
-
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SignInUp from './pages/SignInUp';
-import Messaging from './components/Messaging';
-/*
-
-*/
+import Store from './pages/Store';
+import Profile from './pages/profile/Profile.jsx';
+import Layout from './components/Layout/Layout.jsx';
+import EditProfile from './components/EditProfile/EditProfile.jsx';
+import './App.css';
+import Navbar from './components/Navbar/NavBar.jsx';
+import Messaging from './components/Messaging/Messaging.jsx';
+import CreateListing from "./components/Listing/createListing.jsx";
 
 function App() {
-
-
-
   return (
-    <>
- <div>
+    <div>
       <BrowserRouter>
-
+        <Navbar />
         <Routes>
-          <Route path = "/Account" element = {<SignInUp />} exact/>
-          <Route path = "/Message" element = {<Messaging/>} /> 
-          <Route path = "/" element = {<SignInUp />} exact/>
-
+          <Route path = "/Store" element = {<Store />} exact/>
+          <Route path = "/createListing" element = {<CreateListing/>} /> 
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/EditProfile" element={<EditProfile />} />
+          <Route path = "/" element = {<Store />} exact/>
+  
         </Routes>
       </BrowserRouter>
     </div>
-     
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
