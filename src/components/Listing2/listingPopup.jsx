@@ -6,13 +6,23 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { CardActionArea } from '@mui/material';
+import Report from '.././Report/report';
 
-function listingPopup({ img, title, content, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
-    const [reportInitiated, setReportInitiated] = useState(false);
+function ListingPopup({ img, title, content, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
+    const [isReportVisible, setIsReportVisible] = useState(false);
 
     if (!isExpanded) {
         return null;
     }
+
+    const handleReportClick = () => {
+        setIsReportVisible(true); // Set report window visibility to true when the Report button is clicked
+        console.log('clicked report');
+    };
+
+    const handleCloseReport = () => {
+        setIsReportVisible(false); // Close the report window
+    };
 
     return (
         <Card sx={{
@@ -56,7 +66,6 @@ function listingPopup({ img, title, content, setMessageInitiated, setTradeInitia
                     }}>
                     Message
                 </Button>
-
                 <Button
                     variant="contained"
                     sx={{ width: '33%' }}
@@ -69,16 +78,17 @@ function listingPopup({ img, title, content, setMessageInitiated, setTradeInitia
                 <Button
                     variant="contained"
                     sx={{ width: '33%' }}
-                    onClick={() => {
-                        openReport;
-                        console.log('clicked report');
-                        setReportInitiated(true);
-                    }}>
+                    onClick={handleReportClick}
+                >
                     Report
                 </Button>
             </CardActions>
+            {/* Render the Report component */}
+            {isReportVisible && (
+                <Report handleClose={handleCloseReport} />
+            )}
         </Card>
     );
 }
 
-export default listingPopup;
+export default ListingPopup;
