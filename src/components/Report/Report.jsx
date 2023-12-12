@@ -2,25 +2,21 @@ import React, { useState } from 'react';
 import './Report.css';
 import { collection, doc, setDoc } from 'firebase/firestore'; // Import Firestore functions from Firebase
 import { firestore } from '../../firebase'; // Import your Firebase configuration
-import { getAuth, onAuthStateChanged, auth} from '../../firebase'; // Import your Firebase authentication configuration
-
+import { getAuth, onAuthStateChanged, auth } from '../../firebase'; // Import your Firebase authentication configuration
 
 const Report = () => {
     const [user, setUser] = useState(null);
-    onAuthStateChanged(auth, (user) =>{
-            if(user){
-                setUser(user.uid);
-            }
-            else{
-                setUser("test");
-            }
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setUser(user.uid);
+        } else {
+            setUser("test");
         }
-    )
-
-
+    });
 
     const [selectedCategory, setSelectedCategory] = useState('profanity');
     const [description, setDescription] = useState('');
+    const [title, setTitle] = useState('');
     const [isReportVisible, setIsReportVisible] = useState(true);
 
     const handleCategoryChange = (e) => {
@@ -31,6 +27,10 @@ const Report = () => {
         setDescription(e.target.value);
     };
 
+    const handleTitleChange = (e) => {
+        setTitle(e.target.value);
+    };
+
     const handleClose = () => {
         setIsReportVisible(false);
     };
@@ -39,11 +39,11 @@ const Report = () => {
         e.preventDefault();
 
         try {
-            // Add Firestore logic here
             const docRef = doc(collection(firestore, 'reports'));
 
             await setDoc(docRef, {
                 UID: user,
+                title: title,
                 category: selectedCategory,
                 description: description
             });
@@ -53,18 +53,16 @@ const Report = () => {
             console.error('Error writing document: ', error);
         }
 
-        // Clear form fields after submission
         setSelectedCategory('profanity');
         setDescription('');
-
-        // Close the report window after submission
+        setTitle('');
         handleClose();
     };
 
     return (
         <div className={`report ${isReportVisible ? 'visible' : 'hidden'}`}>
             <div className="header">
-                <h1>Report</h1>
+                <h2>Report</h2>
             </div>
 
             <form className="form-container" onSubmit={handleSubmit}>
@@ -84,12 +82,17 @@ const Report = () => {
                     <option value="other">Other</option>
                 </select>
 
-                <p>Description</p>
                 <textarea
                     className="description-box"
                     value={description}
                     onChange={handleDescriptionChange}
                     placeholder="Enter description here..."
+                ></textarea>
+                <textarea
+                    className="title-box"
+                    value={title}
+                    onChange={handleTitleChange}
+                    placeholder="Enter title here..."
                 ></textarea>
 
                 <button className="submit-button" type="submit">Submit</button>

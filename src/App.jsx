@@ -8,6 +8,7 @@ import './App.css';
 import Navbar from './components/Navbar/NavBar.jsx';
 import Messaging from './components/Messaging/Messaging.jsx';
 import CreateListing from "./components/Listing/createListing.jsx";
+import ReportView from './components/Report/reportView.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path = "/createListing" element = {<CreateListing/>} /> 
           <Route path="/profile" element={<Profile />} />
           <Route path="/EditProfile" element={<EditProfile />} />
+          <Route path = "/reportView" element = {<ReportView />}/>
           <Route path = "/" element = {<Store />} exact/>
   
         </Routes>

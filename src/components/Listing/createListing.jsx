@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './createListing.css';
 import '../../firebase';
-
-// Import firebase stuff
 import { addDoc, collection } from 'firebase/firestore';
 import { firestore } from '../../firebase.js';
 
@@ -27,6 +25,17 @@ const CreateListing = () => {
         marginBottom: '20px'
     };
 
+    const generatePostID = () => {
+        // Generating a random ID of length 8
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const length = 8;
+        let randomID = '';
+        for (let i = 0; i < length; i++) {
+            randomID += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return randomID;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -39,11 +48,15 @@ const CreateListing = () => {
         try {
             const listingsCollection = collection(firestore, 'listings');
 
-            // Add a document to the 'listings' collection with image, title, and content data
+            // Generate a postID
+            const postID = generatePostID();
+
+            // Add a document to the 'listings' collection with image, title, content, and postID data
             await addDoc(listingsCollection, {
                 image: imagePreview,
                 title: title,
-                content: content
+                content: content,
+                postID: postID // Add randomly generated postID
             });
 
             // Reset form fields after successful submission

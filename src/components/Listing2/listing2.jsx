@@ -2,24 +2,16 @@ import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import { Button } from '@mui/material';
 import { CardActionArea } from '@mui/material';
 import Report from '../Report/Report.jsx';
-
 import ListingPopup from './listingPopup';
 
-function Listing2({ width, img, title, content }) {
+function Listing2({ img, title, content }) {
     const [isExpanded, setExpanded] = useState(false);
     const [messageInitiated, setMessageInitiated] = useState(false);
     const [tradeInitiated, setTradeInitiated] = useState(false);
     const [reportInitiated, setReportInitiated] = useState(false);
-
-    const openReport = () => {
-        console.log('clicked report');
-        setReportInitiated(true);
-    };
 
     return (
         <div>

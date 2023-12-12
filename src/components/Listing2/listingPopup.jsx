@@ -32,10 +32,10 @@ function ListingPopup({ img, title, content, setMessageInitiated, setTradeInitia
             transform: 'translate(-50%, -50%)',
             width: '70%', // Adjusted width
             maxWidth: '500px', // Adjusted maximum width
-            maxHeight: '80vh', // Adjusted maximum height
+            maxHeight: '800px', // Adjusted maximum height to 90vh
             overflow: 'auto', // Enable scrolling if content exceeds the height
             backgroundColor: '#fff', // Set background color to white
-            zIndex: '9999', // Set a higher z-index value
+            zIndex: '999', // Set a higher z-index value
         }}>
             <CardActionArea onClick={() => {
                 console.log('content expanded set to false');
