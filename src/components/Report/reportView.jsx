@@ -1,11 +1,23 @@
+/*
+Authors: Branden Purdum and Devin Booth
+*/
+
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebase';
 
+/**
+ * ReportView component fetches and displays a list of reports from the 'reports' collection.
+ * Reports include title, UID, category, and description.
+ */
 const ReportView = () => {
+  // State variable to hold fetched report data
   const [reportData, setReportData] = useState([]);
 
   useEffect(() => {
+    /**
+     * Fetches data from the 'reports' collection in Firestore and sets the report data in state.
+     */
     const fetchData = async () => {
       try {
         const reportsCollection = collection(firestore, 'reports');
@@ -25,6 +37,7 @@ const ReportView = () => {
     fetchData();
   }, []);
 
+  // JSX to render the fetched report data
   return (
     <div style={{
       paddingTop: '20px', // Padding at the top
@@ -59,4 +72,3 @@ const ReportView = () => {
 };
 
 export default ReportView;
-    
