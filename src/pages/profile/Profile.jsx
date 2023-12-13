@@ -1,98 +1,95 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Profile.css';
-import Card from 'react-bootstrap/Card';
-// import { firestore, auth } from 'firebase/app';
+import { Card, CardContent, CardHeader, Avatar, Typography, Button, Grid, Box } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import EmailIcon from '@mui/icons-material/Email';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-
-function Profile() {
-  //Establish states for the profile page
+const Profile = () => {
   const [username, setUsername] = useState('');
   const [profileImage, setProfileImage] = useState('');
-  const [profileData, setProfileData] = useState({
-    articles: 0,
-    followers: 0,
-    rating: 0,
-  });
-
-  //Initialize the navigation paths to the Edit Profile and Messaging pages. 
   const navigate = useNavigate();
 
   const handleEditProfile = () => {
-    navigate('/EditProfile'); 
+    navigate('/EditProfile');
   };
+
   const handleMessaging = () => {
-    navigate('/Messaging'); 
+    navigate('/Messaging');
   };
 
-  //useEffect appears to be unused, but it's supposed to so something with authentication and logins.
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        // Fetch the current user's data from Firebase Authentication
-        const user = auth.currentUser;
+    const auth = getAuth();
+
+    // Add an observer to listen for changes in user authentication state
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
         setUsername(user.displayName || 'Default Username');
-        setProfileImage(user.photoURL || ''); // You may need to update this based on your data structure
-
-        // Fetch additional user data from Firestore (adjust the collection and document path accordingly)
-        const userDoc = await firestore.collection('users').doc(user.uid).get();
-        if (userDoc.exists) {
-          const userData = userDoc.data();
-          setProfileData({
-            articles: userData.articles || 0,
-            followers: userData.followers || 0,
-            rating: userData.rating || 0,
-          });
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error.message);
-        // You may want to handle errors or redirect the user to an error page
+        setProfileImage(user.photoURL || '');
+      } else {
+        // User is signed out
+        setUsername(''); // Reset username and profile image
+        setProfileImage('');
       }
-    };
+    });
 
-    fetchUserData();
+    // Clean up the observer when the component unmounts
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
-  //Create the layout for the profile page.
   return (
-    <div>
-      <div className="container mt-5 d-flex justify-content-center">
-        <div className="card p-3">
-          {/* ... (existing card structure) */}
-          <div className="d-flex align-items-center">
-            <div className="image">
-              <img src={profileImage || 'https://via.placeholder.com/155'} className="rounded" width="155" alt="Profile" />
-            </div>
-            <div className="ml-3 w-100">
-              <h4 className="mb-0 mt-0">{username}</h4>
-              <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                <div className="d-flex flex-column">
-                  <span className="articles">Articles</span>
-                  <span className="number1">{profileData.articles}</span>
-                </div>
-                <div className="d-flex flex-column">
-                  <span className="followers">Followers</span>
-                  <span className="number2">{profileData.followers}</span>
-                </div>
-                <div className="d-flex flex-column">
-                  <span className="rating">Rating</span>
-                  <span className="number3">{profileData.rating}</span>
-                </div>
-              </div>
-              <div className="button mt-2 d-flex flex-row align-items-center">
-                <button className="btn btn-sm btn-outline-primary w-100" onClick={handleMessaging}>Message</button>
-                <button className="btn btn-sm btn-primary w-100 ml-2" onClick={handleEditProfile}>Edit Profile</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h1 style={{ color: 'black', marginLeft: '0px', marginRight: 'auto' }}>{username}'s listings</h1>
-        <hr></hr>
-      </div>
-    </div>
+    <Box mt={5}>
+      <Grid container justifyContent="center">
+        <Grid item xs={12} sm={8} md={6} lg={4}>
+          <Card>
+            <CardHeader
+              avatar={<Avatar src={profileImage || 'https://via.placeholder.com/155'} alt="Profile" />}
+              title={username}
+            />
+            <CardContent>
+              <Typography variant="body2" color="textSecondary" component="div">
+                {/* Content removed */}
+              </Typography>
+            </CardContent>
+            <Box p={2}>
+              <Grid container spacing={2}>
+                <Grid item xs={6}>
+                  <Button
+                    fullWidth
+                    variant="outlined"
+                    startIcon={<EmailIcon />}
+                    onClick={handleMessaging}
+                  >
+                    Message
+                  </Button>
+                </Grid>
+                <Grid item xs={6}>
+                  <Button
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    startIcon={<EditIcon />}
+                    onClick={handleEditProfile}
+                  >
+                    Edit Profile
+                  </Button>
+                </Grid>
+              </Grid>
+            </Box>
+          </Card>
+        </Grid>
+      </Grid>
+      <Box mt={2}>
+        <Typography variant="h6" color="textPrimary">
+          {username}'s listings
+        </Typography>
+        <hr />
+      </Box>
+    </Box>
   );
-}
+};
 
 export default Profile;

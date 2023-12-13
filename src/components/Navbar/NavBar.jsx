@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import GoogleSignInButton from '../googleSignInButton';
+import GoogleSignInButton from '../newAuth/googleSignInButton';
 
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
