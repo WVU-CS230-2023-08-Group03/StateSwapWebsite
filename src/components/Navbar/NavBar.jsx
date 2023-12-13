@@ -1,13 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import logo1 from '../../MSSlogo.jpg'
 import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
     <nav className="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="#">Mountain State Swap</Link>
+      <img src={logo1} alt="MSS Logo" />
+        <Link className="navbar-brand" to="/">Mountain State Swap</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -24,6 +26,9 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <Link to="/reportView" className="nav-link" activeClassName="active">Report View</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/message" className="nav-link" activeClassName="active">Messaging</Link>
             </li>
           </ul>
           <form className="d-flex ms-auto" role="search">
