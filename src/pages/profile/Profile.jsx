@@ -7,6 +7,7 @@ import Listings from "../../components/Listings/Listings.jsx";
 
 
 function Profile() {
+  //Establish states for the profile page
   const [username, setUsername] = useState('');
   const [profileImage, setProfileImage] = useState('');
   const [profileData, setProfileData] = useState({
@@ -15,6 +16,7 @@ function Profile() {
     rating: 0,
   });
 
+  //Initialize the navigation paths to the Edit Profile and Messaging pages. 
   const navigate = useNavigate();
 
   const handleEditProfile = () => {
@@ -24,7 +26,7 @@ function Profile() {
     navigate('/Messaging'); 
   };
 
-
+  //useEffect appears to be unused, but it's supposed to so something with authentication and logins.
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -52,6 +54,7 @@ function Profile() {
     fetchUserData();
   }, []);
 
+  //Create the layout for the profile page.
   return (
     <div>
       <div className="container mt-5 d-flex justify-content-center">
