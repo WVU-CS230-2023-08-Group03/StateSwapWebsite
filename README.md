@@ -1,7 +1,12 @@
 # README
 
 ## Project Summary
-Mountain State Swap
+                          _        _         __ _        _         __                     
+  /\/\   ___  _   _ _ __ | |_ __ _(_)_ __   / _\ |_ __ _| |_ ___  / _\_      ____ _ _ __  
+ /    \ / _ \| | | | '_ \| __/ _` | | '_ \  \ \| __/ _` | __/ _ \ \ \\ \ /\ / / _` | '_ \ 
+/ /\/\ \ (_) | |_| | | | | || (_| | | | | | _\ \ || (_| | ||  __/ _\ \\ V  V / (_| | |_) |
+\/    \/\___/ \__,_|_| |_|\__\__,_|_|_| |_| \__/\__\__,_|\__\___| \__/ \_/\_/ \__,_| .__/ 
+                                                                                   |_|    
 
 This platform serves as a trading hub for the people of Morgantown, enabling individuals to showcase items available for trade. It provides a user-friendly interface where members can list items they want to exchange, facilitating local transactions within the community. Additionally, the platform includes a messaging system allowing users to communicate privately with each other to discuss trade details, negotiate, and arrange meetups. To ensure the safety and reliability of the trading environment, a comprehensive rating and reporting system is integrated. This system allows users to rate their trading experiences and report any suspicious or unsafe activity, fostering a secure trading atmosphere within the Morgantown community.
 
