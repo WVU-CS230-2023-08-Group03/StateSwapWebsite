@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import Report from '../Report/Report.jsx';
+// import Report from 'src/components/Report/Report.jsx';
 import ListingPopup from './listingPopup';
 
 function Listing2({ img, title, content }) {
@@ -60,7 +60,7 @@ function Listing2({ img, title, content }) {
                 setExpanded={setExpanded}
             />
 
-            {reportInitiated && <Report />} {/* Render Report component if reportInitiated is true */}
+            {/* {reportInitiated && <Report />} Render Report component if reportInitiated is true */}
         </div>
     );
 }
