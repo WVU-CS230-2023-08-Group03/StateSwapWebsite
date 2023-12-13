@@ -4,7 +4,7 @@ Authors: Branden Purdum and Devin Booth
 
 import React, { useState } from 'react';
 import './createListing.css';
-import '../../firebase';
+import '../../firebase.js';
 import { addDoc, collection } from 'firebase/firestore';
 import { firestore } from '../../firebase.js';
 
