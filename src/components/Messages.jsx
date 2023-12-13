@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, setDoc, getDoc, getDocs, getFirestore, onSnapshot, addDoc, orderBy, query, serverTimestamp, Timestamp, collection } from 'firebase/firestore';
@@ -6,47 +6,54 @@ import { auth, firestore } from '../firebase.js';
 
 const Messages = () => {
   const [show, setShow] = useState(false);
-  const [messages, setMessages] = useState(['']);
-  const handleClose = () => setShow(false);
-
+  const [messages, setMessages] = useState([]);
   const [UID, setUID] = useState('');
+ 
 
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      // User is signed in
-      setUID(user.uid);
-      console.log(UID + ' Is the UID');
+  useEffect(() => {
+    const fetchData = async () => {
       try {
-        const querySnapshot = collection(firestore, 'messages', "Billy", 'Received');
-        getDocs(querySnapshot).then((snapshot) => {
-          let msgs = []
-          snapshot.docs.forEach((doc) => {
-              msgs.push({ ...doc.data()}["msg"]);
-          })
-          console.log(msgs + " is data");
-          setMessages(msgs);
-        })
+        const user = auth.currentUser;
+        if (user) {
+          setUID(user.uid);
+          console.log(UID + ' Is the UID');
+
+          if (UID != "") {
+            const colRef = collection(firestore, 'messages',UID,'Received');
+            getDocs(colRef).then((snapshot)=>{
+             
+              snapshot.docs.forEach((doc) => {
+              var objData = {...doc.data()}
+              messages.push(("From UID: " + objData["id"] +" With message: " + objData["msg"]));
+                
+              })
+              
+              
+            })
+
+       
+          
+           
+          }
+        }
       } catch (error) {
         console.error('Error fetching messages:', error);
       }
-    } else {
-      // User is signed out
-      setUID(null);
-      return;
-    }
-  });
+    };
 
-  const handleShow = async () => {
-    setShow(true);
-    
-  };
-  
- 
+    const unsubscribe = onAuthStateChanged(auth, () => {
+      fetchData();
+    });
 
+    return () => unsubscribe(); 
+
+  }, [UID]);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
- 
       <Button variant="primary" onClick={handleShow}>
         View Messages
       </Button>

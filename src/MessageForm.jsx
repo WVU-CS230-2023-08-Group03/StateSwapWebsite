@@ -1,85 +1,79 @@
-import { useState } from 'react';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { doc, setDoc, getDoc, getDocs, getFirestore, onSnapshot, addDoc, orderBy, query, serverTimestamp, Timestamp, collection } from 'firebase/firestore';
-import { auth, firestore } from './firebase.js';
+import { useState, useEffect } from 'react';
+import { firestore, addDoc, collection, onAuthStateChanged, auth } from './firebase';
 
 function MessageForm() {
-   
-    const [message, setMessage] = useState('');
-    const [UID, setUID] = useState('');
-    const [recip, setRecip] = useState('');
-    const [messages, setMessages] = useState(['']);
+  const [message, setMessage] = useState('');
+  const [UID, setUID] = useState('');
+  const [recip, setRecip] = useState('');
+  const [isUIDSet, setIsUIDSet] = useState(false);
 
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+      
+        setUID(user.uid);
+        setIsUIDSet(true);
+      } else {
 
-   
+        setUID(null);
+        setIsUIDSet(false);
+        alert('Not signed in');
+        return;
+      }
+    });
+  }, []); 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-       
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in
-                setUID(user.uid);
-                console.log(UID+ " Is the UID");
-              } else {
-                // User is signed out
-                setUID(null);
-                alert("Not signed in");
-                return;
-                
-              }
-        });
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        const querySnapshot = collection(firestore, 'messages', "Billy", 'Received');
-        getDocs(querySnapshot).then((snapshot) => {
-          let msgs = []
-          snapshot.docs.forEach((doc) => {
-              msgs.push({ ...doc.data()}["msg"]);
-          })
-          console.log(msgs + " is data");
-          setMessages(msgs);
-        })
-        
-const msgRef = collection(firestore, "messages",recip,"Recieved");
-     
-     addDoc(msgRef, {
-        msg: message,
-        id: UID
-     })
-
-        setMessage('');
-        setUID('');
-        setRecip('');
-      };
-
-      return (
-        <form onSubmit={handleSubmit}>
-   
-        <div>
-        <label>
-        To:
-        <input
-          type="text"
-          value={recip}
-          onChange={(e) => setRecip(e.target.value)}
-          placeholder="Enter user ID"
-        />
-        </label>
-        </div>
-          <label>
-            Message:
-            <textarea
-              rows="4"
-              cols="50"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type your message..."
-            />
-          </label>
-          <br />
-          <button type="submit">Send Message</button>
-        </form>
-      );
+    if (!isUIDSet || UID === '') {
+      
+      alert('UID is not set');
+      return;
     }
-    
-    export default MessageForm;
+
+    const msgRef = collection(firestore, 'messages', recip, 'Received');
+
+    addDoc(msgRef, {
+      msg: message,
+      id: UID,
+    });
+
+    setMessage('');
+    setRecip('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>
+          To:
+          <input
+            type="text"
+            value={recip}
+            onChange={(e) => setRecip(e.target.value)}
+            placeholder="Enter user ID"
+            disabled={!isUIDSet} 
+          />
+        </label>
+      </div>
+      <label>
+        Message:
+        <textarea
+          rows="4"
+          cols="50"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Type your message..."
+          disabled={!isUIDSet} 
+        />
+      </label>
+      <br />
+      <button type="submit" disabled={!isUIDSet}>
+        Send Message
+      </button>
+    </form>
+  );
+}
+
+export default MessageForm;
