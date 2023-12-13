@@ -18,18 +18,18 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path = "/Store" element = {<Store />} exact/>
-          <Route path = "/createListing" element = {<CreateListing/>} /> 
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/EditProfile" element={<EditProfile />} />
-          <Route path = "/reportView" element = {<ReportView />}/>
-          <Route path = "/message" element = {<Messaging />}/>
-          <Route path = "/login" element = {<SignInUp />}/>
-          <Route path = "/" element = {<Store />} exact/>
-          
-  
-        </Routes>
+        <div style={{ paddingTop: '70px' /* Adjust this value based on your navbar height */ }}>
+          <Routes>
+            <Route path="/Store" element={<Store />} exact />
+            <Route path="/createListing" element={<CreateListing />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/EditProfile" element={<EditProfile />} />
+            <Route path="/reportView" element={<ReportView />} />
+            <Route path="/message" element={<Messaging />} />
+            <Route path="/login" element={<SignInUp />} />
+            <Route path="/" element={<Store />} exact />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
