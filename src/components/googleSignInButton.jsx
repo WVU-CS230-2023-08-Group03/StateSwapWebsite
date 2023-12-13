@@ -32,12 +32,12 @@ const GoogleSignInButton = () => {
     <div>
       {user ? (
         <div>
-          <Button variant="text" color="secondary" onClick={handleSignOut}>
+          <Button variant="text" color="inherit" onClick={handleSignOut}>
             Sign out
           </Button>
         </div>
       ) : (
-        <Button variant="text" color="secondary" onClick={handleSignInWithGoogle}>
+        <Button variant="text" color="inherit" onClick={handleSignInWithGoogle}>
           Sign in with Google
         </Button>
       )}
