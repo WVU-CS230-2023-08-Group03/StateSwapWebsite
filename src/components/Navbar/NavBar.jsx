@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import GoogleSignInButton from '../googleSignInButton';
 
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -41,7 +42,9 @@ const NavBar = () => {
               <Button key={link.label} color="inherit" component={Link} to={link.to}>
                 {link.label}
               </Button>
+              
             ))}
+            <GoogleSignInButton />
           </div>
         </Toolbar>
       </AppBar>

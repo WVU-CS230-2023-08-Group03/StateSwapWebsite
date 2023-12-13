@@ -7,8 +7,6 @@ import ListingWindow from "../components/Listing2/listingWindow.jsx"
 
 
 //assets
-import SampleMessages from '../assets/SampleMessages.txt';
-import Layout from "../components/Layout/Layout.jsx"
 
 
 function Store() {
