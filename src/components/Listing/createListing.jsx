@@ -1,14 +1,27 @@
+/*
+Authors: Branden Purdum and Devin Booth
+*/
+
 import React, { useState } from 'react';
 import './createListing.css';
 import '../../firebase';
 import { addDoc, collection } from 'firebase/firestore';
 import { firestore } from '../../firebase.js';
 
+/**
+ * CreateListing component allows users to create a new listing with an image, title, and content.
+ * Users can preview the selected image and submit the listing after providing necessary details.
+ */
 const CreateListing = () => {
+    // State variables for image preview, title, and content
     const [imagePreview, setImagePreview] = useState(null);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
+    /**
+     * Handles the change of the image file input, providing a preview of the selected image.
+     * @param {Event} e - The event object triggered by changing the file input
+     */
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -20,13 +33,17 @@ const CreateListing = () => {
         }
     };
 
+    // Inline styling for form fields
     const fieldStyle = {
         width: '300px',
         marginBottom: '20px'
     };
 
+    /**
+     * Generates a random post ID of length 8 characters.
+     * @returns {string} - Randomly generated postID
+     */
     const generatePostID = () => {
-        // Generating a random ID of length 8
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         const length = 8;
         let randomID = '';
@@ -36,6 +53,11 @@ const CreateListing = () => {
         return randomID;
     };
 
+    /**
+     * Handles the submission of the form.
+     * Validates input fields and creates a new listing document in the 'listings' collection.
+     * @param {Event} e - The event object triggered by form submission
+     */
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -70,6 +92,7 @@ const CreateListing = () => {
         }
     };
 
+    // JSX to render form elements and handle user input
     return (
         <div className="create-listing">
             <h1>Image preview</h1>

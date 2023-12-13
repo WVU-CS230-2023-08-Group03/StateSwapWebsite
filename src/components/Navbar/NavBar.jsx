@@ -25,9 +25,6 @@ function NavBar() {
             <li className="nav-item">
               <Link to="/reportView" className="nav-link" activeClassName="active">Report View</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/message" className="nav-link" activeClassName="active">Messaging</Link>
-            </li>
           </ul>
           <form className="d-flex ms-auto" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
