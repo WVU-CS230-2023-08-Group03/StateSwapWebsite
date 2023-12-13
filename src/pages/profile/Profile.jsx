@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Profile.css';
 import Card from 'react-bootstrap/Card';
-import Listings from "../../components/Listings/Listings.jsx";
 // import { firestore, auth } from 'firebase/app';
 
 

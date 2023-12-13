@@ -1,5 +1,4 @@
 import './Listings.css'
-import Listing from '../Listing/Listing.jsx'
 
 //assets
 import HondaCivic from '../../assets/HondaCivic.jpg';
