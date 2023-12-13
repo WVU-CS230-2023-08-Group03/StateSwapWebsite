@@ -38,12 +38,7 @@ const NavBar = () => {
             Mountain State Swap
           </Typography>
           <div>
-            {navLinks.map((link) => (
-              <Button key={link.label} color="inherit" component={Link} to={link.to}>
-                {link.label}
-              </Button>
-              
-            ))}
+            
             <GoogleSignInButton />
           </div>
         </Toolbar>
