@@ -11,7 +11,7 @@ This project is driven by the aspiration to cultivate a connected community in M
 We used CSS for styling. 
  
 ## Store Page
-![screenshot of store](site screenshot.PNG "Store Page")
+![screenshot of store](./sc.PNG "Store Page")
    
 # Tech/Framework used: React + Vite
 
@@ -42,12 +42,12 @@ If you would like to start trading:
 7: If you would like to communicate with the user, use the messaging feature. 
 
 ## Contributors
-Devin Booth
-Declan Ware
-Hunter Harris 
-Ian Hoopes
-Riley Potter
-Dhyan Patel 
-Branden Purdum
+Devin Booth  
+Declan Ware  
+Hunter Harris   
+Ian Hoopes  
+Riley Potter  
+Dhyan Patel   
+Branden Purdum  
 
 Extra bits: review
