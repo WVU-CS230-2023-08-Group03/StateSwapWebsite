@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Profile.css';
 import Card from 'react-bootstrap/Card';
-import Listings from "../../components/Listings/Listings.jsx";
 // import { firestore, auth } from 'firebase/app';
 
 
@@ -91,7 +90,6 @@ function Profile() {
       <div>
         <h1 style={{ color: 'black', marginLeft: '0px', marginRight: 'auto' }}>{username}'s listings</h1>
         <hr></hr>
-        <Listings />
       </div>
     </div>
   );
