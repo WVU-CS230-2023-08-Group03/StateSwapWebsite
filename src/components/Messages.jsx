@@ -58,7 +58,7 @@ const Messages = () => {
         View Messages
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} style={{ marginTop: '50px' }}>
         <Modal.Header closeButton>
           <Modal.Title>Messages</Modal.Title>
         </Modal.Header>
