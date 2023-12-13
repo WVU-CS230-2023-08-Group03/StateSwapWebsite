@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { CardActionArea } from '@mui/material';
-import Report from '.././Report/report';
+import Report from '.././Report/Report';
 
 function ListingPopup({ img, title, content, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
     const [isReportVisible, setIsReportVisible] = useState(false);

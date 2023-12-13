@@ -31,9 +31,9 @@ const GoogleSignInButton = () => {
   return (
     <div>
       {user ? (
-        <div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button variant="text" color="inherit" onClick={handleSignOut}>
-            Sign out
+            {user.displayName} Sign out
           </Button>
         </div>
       ) : (
