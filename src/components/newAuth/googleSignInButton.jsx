@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
-import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from 'firebase/auth';
+import React from 'react';
 import Button from '@mui/material/Button';
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth';
+import { useAuth } from './AuthContext'; // Replace with your actual import
 
 const GoogleSignInButton = () => {
-  const [user, setUser] = useState(null);
+  const { user } = useAuth(); // Assuming useAuth provides the user object
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 
-  const handleSignInWithGoogle = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const signedInUser = result.user;
-        setUser(signedInUser);
-      })
-      .catch((error) => {
-        console.error('Google Sign-In Error:', error);
-      });
+  const handleSignInWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const signedInUser = result.user;
+      console.log('User signed in:', signedInUser);
+    } catch (error) {
+      console.error('Google Sign-In Error:', error.message);
+    }
   };
 
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        setUser(null);
-      })
-      .catch((error) => {
-        console.error('Sign-Out Error:', error);
-      });
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      console.log('User signed out');
+    } catch (error) {
+      console.error('Sign-Out Error:', error.message);
+    }
   };
 
   return (

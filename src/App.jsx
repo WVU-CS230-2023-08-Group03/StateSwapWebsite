@@ -15,10 +15,11 @@ import Homepage from './pages/Homepage.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import Terms from './pages/Terms.jsx';
 import ContactUs from './pages/ContactUs.jsx';
+import { AuthProvider } from './components/newAuth/AuthContext.jsx';
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <BrowserRouter>
         <Navbar />
         <div style={{ paddingTop: '70px' /* Adjust this value based on your navbar height */ }}>
@@ -37,7 +38,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 

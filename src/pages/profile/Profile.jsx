@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, Avatar, Typography, Button, Grid, Box } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import EmailIcon from '@mui/icons-material/Email';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useAuth } from '../../components/newAuth/AuthContext';
 
 const Profile = () => {
   const [username, setUsername] = useState('');
@@ -18,27 +18,19 @@ const Profile = () => {
     navigate('/Messaging');
   };
 
+  const { user } = useAuth();
+
   useEffect(() => {
-    const auth = getAuth();
-
-    // Add an observer to listen for changes in user authentication state
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in
-        setUsername(user.displayName || 'Default Username');
-        setProfileImage(user.photoURL || '');
-      } else {
-        // User is signed out
-        setUsername(''); // Reset username and profile image
-        setProfileImage('');
-      }
-    });
-
-    // Clean up the observer when the component unmounts
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+    if (user) {
+      // User is signed in, update profile information
+      setUsername(user.displayName || 'Default Username');
+      setProfileImage(user.photoURL || '');
+    } else {
+      // User is signed out, reset profile information
+      setUsername('');
+      setProfileImage('');
+    }
+  }, [user]); // This effect will run whenever the 'user' object changes
 
   return (
     <Box mt={5}>
@@ -47,13 +39,13 @@ const Profile = () => {
           <Card>
             <CardHeader
               avatar={<Avatar src={profileImage || 'https://via.placeholder.com/155'} alt="Profile" />}
-              title={username}
+              title={
+                <Typography variant="h4" color="textPrimary">
+                  {username}
+                </Typography>
+              }
             />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="div">
-                {/* Content removed */}
-              </Typography>
-            </CardContent>
+            <CardContent></CardContent>
             <Box p={2}>
               <Grid container spacing={2}>
                 <Grid item xs={6}>
