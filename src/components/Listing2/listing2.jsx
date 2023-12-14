@@ -55,6 +55,7 @@ function Listing2({ img, title, content, userID, postID }) {
                 title={title}
                 content={content}
                 userID={userID}
+                postID={postID}
                 setMessageInitiated={setMessageInitiated}
                 setTradeInitiated={setTradeInitiated}
                 isExpanded={isExpanded}

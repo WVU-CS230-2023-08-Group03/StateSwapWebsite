@@ -8,6 +8,8 @@ import { Button } from '@mui/material';
 import { CardActionArea } from '@mui/material';
 import Report from '.././Report/Report';
 import { useAuth } from '../newAuth/AuthContext';
+import { doc, setDoc, getDoc, getDocs, getFirestore, onSnapshot, addDoc, orderBy, query, where, serverTimestamp, Timestamp, collection, deleteDoc } from 'firebase/firestore';
+import { auth, firestore } from '../../firebase.js';
 
 function ListingPopup({ img, title, content, userID, postID, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
     const [isReportVisible, setIsReportVisible] = useState(false);
@@ -17,9 +19,34 @@ function ListingPopup({ img, title, content, userID, postID, setMessageInitiated
         return null;
     }
 
-    const handleDeleteClick = () => {
-        console.log('clicked delete');
-    };
+    const handleDeleteClick = async () => {
+        try {
+          // Assuming you have a 'listings' collection reference
+          const listingsCollection = collection(firestore, 'listings');
+      
+          // Create a query to find the document with the given postID
+          const queryRef = query(listingsCollection, where('postID', '==', postID));
+      
+          // Execute the query
+          const querySnapshot = await getDocs(queryRef);
+      
+          // Check if any documents match the query
+          if (!querySnapshot.empty) {
+            // Assuming there's only one document with the given postID, get its reference
+            const listingDocRef = querySnapshot.docs[0].ref;
+      
+            // Delete the document
+            await deleteDoc(listingDocRef);
+      
+            console.log('Document successfully deleted!');
+          } else {
+            console.log('No matching document found.');
+          }
+        } catch (error) {
+          console.error('Error deleting listing:', error);
+        }
+      };
+      
 
     const handleReportClick = () => {
         setIsReportVisible(true); // Set report window visibility to true when the Report button is clicked
