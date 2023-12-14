@@ -12,7 +12,7 @@ const GoogleSignInButton = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const signedInUser = result.user;
-      console.log('User signed in:', signedInUser);
+      console.log('User signed in:', signedInUser, " with id: "+signedInUser.uid);
     } catch (error) {
       console.error('Google Sign-In Error:', error.message);
     }
