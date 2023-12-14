@@ -7,13 +7,19 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { CardActionArea } from '@mui/material';
 import Report from '.././Report/Report';
+import { useAuth } from '../newAuth/AuthContext';
 
-function ListingPopup({ img, title, content, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
+function ListingPopup({ img, title, content, userID, postID, setMessageInitiated, setTradeInitiated, isExpanded, setExpanded }) {
     const [isReportVisible, setIsReportVisible] = useState(false);
+    const { user } = useAuth();
 
     if (!isExpanded) {
         return null;
     }
+
+    const handleDeleteClick = () => {
+        console.log('clicked delete');
+    };
 
     const handleReportClick = () => {
         setIsReportVisible(true); // Set report window visibility to true when the Report button is clicked
@@ -75,13 +81,24 @@ function ListingPopup({ img, title, content, setMessageInitiated, setTradeInitia
                     }}>
                     Trade
                 </Button>
-                <Button
-                    variant="contained"
-                    sx={{ width: '33%' }}
-                    onClick={handleReportClick}
-                >
-                    Report
-                </Button>
+
+                {user?.uid === userID ? ( // Check if the current user's ID matches the listing's user ID
+                    <Button
+                        variant="contained"
+                        sx={{ width: '33%', backgroundColor: 'red' }}
+                        onClick={handleDeleteClick}
+                    >
+                        Delete Listing
+                    </Button>
+                ) : (
+                    <Button
+                        variant="contained"
+                        sx={{ width: '33%' }}
+                        onClick={handleReportClick}
+                    >
+                        Report
+                    </Button>
+                )}
             </CardActions>
             {/* Render the Report component */}
             {isReportVisible && (

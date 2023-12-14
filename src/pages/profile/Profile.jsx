@@ -4,10 +4,14 @@ import { Card, CardContent, CardHeader, Avatar, Typography, Button, Grid, Box } 
 import EditIcon from '@mui/icons-material/Edit';
 import EmailIcon from '@mui/icons-material/Email';
 import { useAuth } from '../../components/newAuth/AuthContext';
+import Listing2 from '../../components/Listing2/listing2';
+import { doc, setDoc, getDoc, getDocs, getFirestore, onSnapshot, addDoc, orderBy, query, where, serverTimestamp, Timestamp, collection } from 'firebase/firestore';
+import { auth, firestore } from '../../firebase.js';
 
 const Profile = () => {
   const [username, setUsername] = useState('');
   const [profileImage, setProfileImage] = useState('');
+  const [userListings, setUserListings] = useState([]); // State to store user's listings
   const navigate = useNavigate();
 
   const handleEditProfile = () => {
@@ -21,16 +25,29 @@ const Profile = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (user) {
-      // User is signed in, update profile information
-      setUsername(user.displayName || 'Default Username');
-      setProfileImage(user.photoURL || '');
-    } else {
-      // User is signed out, reset profile information
-      setUsername('');
-      setProfileImage('');
-    }
-  }, [user]); // This effect will run whenever the 'user' object changes
+    const fetchUserData = async () => {
+      if (user) {
+        // User is signed in, update profile information
+        setUsername(user.displayName || 'Default Username');
+        setProfileImage(user.photoURL || '');
+
+        // Fetch user's listings (replace 'userIdField' with the actual field in your listing documents)
+        const userListingQuery = await getDocs(
+          query(collection(firestore, 'listings'), where('userID', '==', user.uid))
+        );
+
+        const listings = userListingQuery.docs.map((doc) => doc.data());
+        setUserListings(listings);
+      } else {
+        // User is signed out, reset profile information
+        setUsername('');
+        setProfileImage('');
+        setUserListings([]);
+      }
+    };
+
+    fetchUserData();
+  }, [user]);
 
   return (
     <Box mt={5}>
@@ -79,6 +96,13 @@ const Profile = () => {
           {username}'s listings
         </Typography>
         <hr />
+        <Grid container spacing={1}>
+            {userListings.map((listing) => (
+                <Grid item xs={12} sm={4} md={3} lg={2}>
+                    <Listing2 img={listing.image} title={listing.title} content={listing.content} userID={listing.userID} postID={listing.postID}></Listing2>
+                </Grid>
+            ))}
+        </Grid>
       </Box>
     </Box>
   );

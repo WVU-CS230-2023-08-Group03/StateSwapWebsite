@@ -33,7 +33,7 @@ function listingWindow() {
     return <Grid container spacing={1}>
             {listings.map((listing) => (
                 <Grid item xs={12} sm={4} md={3} lg={2}>
-                    <Listing2 img={listing.image} title={listing.title} content={listing.content}></Listing2>
+                    <Listing2 img={listing.image} title={listing.title} content={listing.content} userID={listing.userID} postID={listing.postID}></Listing2>
                 </Grid>
             ))}
         </Grid>

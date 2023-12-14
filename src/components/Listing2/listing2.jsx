@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 // import Report from 'src/components/Report/Report.jsx';
 import ListingPopup from './listingPopup';
 
-function Listing2({ img, title, content }) {
+function Listing2({ img, title, content, userID, postID }) {
     const [isExpanded, setExpanded] = useState(false);
     const [messageInitiated, setMessageInitiated] = useState(false);
     const [tradeInitiated, setTradeInitiated] = useState(false);
@@ -54,6 +54,7 @@ function Listing2({ img, title, content }) {
                 img={img}
                 title={title}
                 content={content}
+                userID={userID}
                 setMessageInitiated={setMessageInitiated}
                 setTradeInitiated={setTradeInitiated}
                 isExpanded={isExpanded}
