@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { firestore, addDoc, collection, onAuthStateChanged, auth } from '../firebase';
+import { firestore, addDoc, collection, onAuthStateChanged, auth } from '../../firebase';
 
 function MessageForm() {
   const [message, setMessage] = useState('');

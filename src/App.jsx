@@ -8,8 +8,8 @@ import Navbar from './components/Navbar/NavBar.jsx';
 
 import CreateListing from "./components/CreateListing/createListing.jsx";
 import ReportView from './components/Report/reportView.jsx';
-import MessageForm from './pages/MessageForm.jsx';
-import Messaging from './components/Messaging.jsx';
+import MessageForm from './components/Messaging/MessageForm.jsx';
+import Messaging from './components/Messaging/Messaging.jsx';
 import SignInUp from './pages/SignInUp.jsx';
 import Homepage from './pages/Homepage.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
