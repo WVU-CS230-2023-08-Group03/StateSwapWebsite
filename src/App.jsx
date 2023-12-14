@@ -17,6 +17,8 @@ import Terms from './pages/Terms.jsx';
 import ContactUs from './pages/ContactUs.jsx';
 import { AuthProvider } from './components/newAuth/AuthContext.jsx';
 
+import MessagingPage from './components/NewMessaging/MessagingPage.jsx';
+
 function App() {
   return (
     <AuthProvider>
@@ -29,7 +31,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/EditProfile" element={<EditProfile />} />
             <Route path="/reportView" element={<ReportView />} />
-            <Route path="/message" element={<Messaging />} />
+            {/* This next line is temporarily changed from messaging to messagingpage*/}
+            <Route path="/message" element={<MessagingPage />} />
             <Route path="/login" element={<SignInUp />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<Terms />} />
